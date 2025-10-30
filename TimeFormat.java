@@ -17,10 +17,15 @@ public class TimeFormat {
 		if (hours >= 12) {
 			ampm = "PM";
 		}
-		if (minutes < 10) {
-			System.out.println ((hours % 12) + ":0" + minutes + " " + ampm);
-		} else {
-		System.out.println ((hours % 12) + ":" + minutes + " " + ampm);
+		int Hours = hours % 12;
+		if (hours == 12) {
+			Hours = 12;
 		}
+		String Minutes = "" + minutes;
+		if (minutes < 10) {
+			Minutes = "0" + minutes;
+		}
+		System.out.println (Hours + ":" + Minutes + " " + ampm);
+		
 	}
 }
